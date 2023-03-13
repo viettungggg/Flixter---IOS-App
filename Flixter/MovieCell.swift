@@ -23,10 +23,10 @@ class MovieCell: UITableViewCell {
         // Configure the view for the selected state
     }
     func configure(with movie: Movie) {
-        MovieNameLabel.text = movie.title
+        MovieNameLabel.text = movie.original_title
         OverviewLabel.text = movie.overview
 
         // Load image async via Nuke library image loading helper method
-        Nuke.loadImage(with: movie.posterURLw200, into: MovieImageView)
+        Nuke.loadImage(with: URL(string: "https://image.tmdb.org/t/p/w200" + movie.poster_path)!, into: MovieImageView)
     }
 }
